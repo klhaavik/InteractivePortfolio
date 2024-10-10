@@ -59,7 +59,7 @@ public class AudioManager : MonoBehaviour
     public void UpdateVolume()
     {
         am.SetFloat("MasterVol", -80f + volume.value * 80f);
-        print("here");
+        // print("here");
     }
 
     public void UpdateReverbLevel()
