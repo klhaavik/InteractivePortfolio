@@ -18,7 +18,9 @@ public class Movement : MonoBehaviour
     bool readyToJump = true;
     bool grounded = true;
     Rigidbody2D rb;
-    public GameObject tutorialText, titleText, songDisplay, groundCheck;
+    public GameObject tutorialText, titleText, songDisplay;
+
+    List<Transform> groundChecks;
     public IntroTextDisplay introTextDisplay;
     bool hasStartedIntro = false;
     Vector3 startPos;
@@ -28,6 +30,10 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
         introTextDisplay = GetComponent<IntroTextDisplay>();
+        groundChecks = new List<Transform>();
+        foreach (Transform child in transform) {
+            groundChecks.Add(child);
+        }
     }
 
     public bool GetKeyLeft(){
@@ -76,9 +82,11 @@ public class Movement : MonoBehaviour
             tutorialText.SetActive(false);
             titleText.SetActive(false);
         }*/
-
-        grounded = Physics2D.Raycast(groundCheck.transform.position, -transform.up, groundedDst);
-        print(grounded);
+        foreach (Transform groundCheck in groundChecks) {
+            grounded = Physics2D.Raycast(groundCheck.transform.position, -transform.up, groundedDst);
+        }
+        
+        // print(grounded);
     }
 
     void FixedUpdate(){
@@ -106,9 +114,9 @@ public class Movement : MonoBehaviour
     }
 
     void Jump(){
-        rb.velocity = new Vector2(rb.velocity.x, 0);
+        // rb.velocity = new Vector2(rb.velocity.x, 0);
         rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-        print("Jump");
+        // print("Jump");
     }
 
     public void ResetJump(){
@@ -148,6 +156,21 @@ public class Movement : MonoBehaviour
             rb.drag = groundDrag;
         }else{
             rb.drag = airDrag;
+        }
+    }
+
+    public void FlipPlayer(){
+        StartCoroutine(RotateGraphic(0.3f));
+    }
+
+    private IEnumerator RotateGraphic(float animSpeed){
+        float t = 0;
+        float currentAngle = transform.eulerAngles.z;
+        while(t < 1f){
+            float newAngle = Mathf.SmoothStep(currentAngle, currentAngle + 180, t);
+            transform.eulerAngles = new Vector3(0, 0, newAngle);
+            t += Time.deltaTime / animSpeed;
+            yield return null;
         }
     }
 

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Switchy : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D col){
-        Physics2D.gravity = new Vector2(Physics2D.gravity.x, -Physics2D.gravity.y);
+    public Movement player;
+    void OnTriggerEnter2D(Collider2D col){
+        print("here");
+        Physics2D.gravity = -Physics2D.gravity;
+        player.FlipPlayer();
     }
 }
