@@ -13,6 +13,7 @@ public class Movement3D : MonoBehaviour
     public float jumpForce = 2f;
     public float jumpCooldown;
     public float groundedDst;
+    public float drag;
     public float audioFadeTime = 1f;
     bool readyToJump = true;
     bool grounded = true;
@@ -68,6 +69,7 @@ public class Movement3D : MonoBehaviour
 
         GetInput();
         SpeedControl();
+        StateControl();
 
         /*if(rb.velocity.magnitude != 0)
         {
@@ -100,7 +102,6 @@ public class Movement3D : MonoBehaviour
         rb.AddForce(moveDirection * moveSpeed, ForceMode.Force);
         // print(rb.velocity);
         //}
-        
         //rb.useGravity = !OnSlope();
     }
 
@@ -140,6 +141,14 @@ public class Movement3D : MonoBehaviour
             }
         //}
         
+    }
+
+    void StateControl(){
+        if(grounded){
+            rb.drag = drag;
+        }else{
+            rb.drag = 0;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
