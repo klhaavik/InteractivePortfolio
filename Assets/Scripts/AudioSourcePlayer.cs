@@ -58,10 +58,10 @@ public class AudioSourcePlayer : MonoBehaviour
         float t = 0;
         song.volume = startVal;
 
-        while(t < fadeTime)
+        while(t < 1f)
         {
-            song.volume = Mathf.Lerp(startVal, endVal, t / fadeTime);
-            t += Time.deltaTime;
+            song.volume = Mathf.SmoothStep(startVal, endVal, t);
+            t += Time.deltaTime / fadeTime;
             yield return null;
         }
         
