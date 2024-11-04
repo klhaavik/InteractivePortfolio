@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using TMPro;
 
-public class StarWarsScroll : MonoBehaviour
+public class TextScroll : MonoBehaviour
 {
     public float scrollSpeed = 5f;  // Speed of the text scrolling
     public float fadeDistance = 30f;  // Distance after which the text starts to fade
@@ -11,39 +12,67 @@ public class StarWarsScroll : MonoBehaviour
 
     private TextMeshProUGUI textMeshPro;
     private CanvasGroup canvasGroup;
-    private float startPos;
+    private Vector3 startPos;
     private float startingScale;
+    private Dictionary<string, string> songBlurbs;
+    bool started = false;
 
     void Start()
     {
         textMeshPro = GetComponent<TextMeshProUGUI>();
-        startPos = 0f + transform.position.y;
+        startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         startingScale = 0f + transform.localScale.x;
-        //canvasGroup = gameObject.AddComponent<CanvasGroup>(); // For fading effect
+
+        songBlurbs = new Dictionary<string, string>();
+        string filePath = Path.Combine(Application.streamingAssetsPath, "songBlurbs.txt");
+
+        if (File.Exists(filePath))
+        {
+            string content = File.ReadAllText(filePath);
+
+            print(content);
+
+            string[] paragraphs = content.Split(new string[] { "\n\n\n\n", "\r\n\r\n\r\n\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+
+            for(int i = 0; i < paragraphs.Length; i+=2){
+                songBlurbs[paragraphs[i]] = paragraphs[i+1];
+            }
+        }
+        else
+        {
+            Debug.LogError("File not found at path: " + filePath);
+        }
     }
 
     void Update()
     {
-        // Move text upwards
+        if(!started) return;
         transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
 
-        // Fade out text
-        float distanceFromStart = transform.position.y - startPos;
+        float distanceFromStart = transform.position.y - startPos.y;
         if (distanceFromStart > fadeDistance)
         {
             float fadeFactor = 1 - distanceFromStart;
-            //textMeshPro.color = new Color(255,255,255,fadeFactor * 255);
         }
 
-        // Scale down text as it moves up for perspective effect
-        float scaleFactor = Mathf.Lerp(startingScale, startingScale / 1.25f, distanceFromStart / (endYPosition - startPos));
-        transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+        /*float scaleFactor = Mathf.Lerp(startingScale, startingScale / 1.25f, distanceFromStart / (endYPosition - startPos.y));
+        transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);*/
 
-        // Stop scrolling if it reaches the end position
         if (transform.position.y >= endYPosition)
         {
-            Destroy(gameObject); // Optional: Destroy text after it scrolls out of view
+            started = false;
         }
+    }
+
+    public void StartTextScroll(string title){
+        started = true;
+        textMeshPro.text = songBlurbs[title];
+    }
+
+    public void StopTextScroll(){
+        started = false;
+        transform.localScale = new Vector3(startingScale, startingScale, startingScale);
+        transform.position = startPos;
     }
 }
 

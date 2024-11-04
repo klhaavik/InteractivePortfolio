@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
 
     List<Transform> groundChecks;
     public IntroTextDisplay introTextDisplay;
+    public TextScroll songBlurbs;
     bool hasStartedIntro = false;
     Vector3 startPos;
 
@@ -179,8 +180,9 @@ public class Movement : MonoBehaviour
         if(col.gameObject.CompareTag("MusicPiece"))
         {
             col.gameObject.GetComponent<AudioSourcePlayer>().PlaySong(audioFadeTime);
-            songDisplay.SetActive(true);
-            songDisplay.GetComponent<Text>().text = col.gameObject.GetComponent<AudioSourcePlayer>().displayTxt;
+            /*songDisplay.SetActive(true);
+            songDisplay.GetComponent<Text>().text = col.gameObject.GetComponent<AudioSourcePlayer>().displayTxt;*/
+            songBlurbs.StartTextScroll(col.gameObject.name);
         }
     }
 
@@ -189,7 +191,8 @@ public class Movement : MonoBehaviour
         if(col.gameObject.CompareTag("MusicPiece"))
         {
             col.gameObject.GetComponent<AudioSourcePlayer>().StopSong(audioFadeTime);
-            songDisplay.SetActive(false);
+            //songDisplay.SetActive(false);
+            songBlurbs.StopTextScroll();
         }
     }
 }

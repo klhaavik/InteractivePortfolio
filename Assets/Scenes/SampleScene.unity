@@ -4580,7 +4580,7 @@ GameObject:
   - component: {fileID: 320506080}
   - component: {fileID: 320506079}
   m_Layer: 0
-  m_Name: LostInSpaceAlbumCover_v5_Full_BicubicAutomatic
+  m_Name: Lost In Space
   m_TagString: MusicPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5242,6 +5242,126 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2414090274533151543, guid: ac322475f18be824da3f3bd2e91d5c85, type: 3}
   m_PrefabInstance: {fileID: 132689095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &327621338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327621339}
+  - component: {fileID: 327621342}
+  - component: {fileID: 327621341}
+  - component: {fileID: 327621340}
+  m_Layer: 5
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &327621339
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327621338}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1942427609}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -875, y: 470}
+  m_SizeDelta: {x: 125, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &327621340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327621338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 327621341}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &327621341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327621338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5773585, g: 0.36157808, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1cee704dcc9f0b740887a6a1ea243baa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &327621342
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327621338}
+  m_CullTransparentMesh: 1
 --- !u!1 &355393573
 GameObject:
   m_ObjectHideFlags: 0
@@ -10100,7 +10220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -3
-  m_Sprite: {fileID: 21300000, guid: 25556a2b43727374eab5d4fcad0ddc74, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4b7403842434c9e4399c5e13120285cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10120,7 +10240,7 @@ Transform:
   m_GameObject: {fileID: 741834087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.73, z: -1.57}
+  m_LocalPosition: {x: 0, y: 0.77, z: -1.57}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10874,8 +10994,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -401.1}
-  m_SizeDelta: {x: 400, y: 200}
+  m_AnchoredPosition: {x: 0, y: -389.86}
+  m_SizeDelta: {x: 388.3, y: 179.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824433970
 MonoBehaviour:
@@ -10927,7 +11047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!1001 &831735212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11365,6 +11485,7 @@ MonoBehaviour:
   titleText: {fileID: 1268517933}
   songDisplay: {fileID: 146732388}
   introTextDisplay: {fileID: 846106158}
+  songBlurbs: {fileID: 1876945348}
 --- !u!50 &846106155
 Rigidbody2D:
   serializedVersion: 4
@@ -11445,12 +11566,12 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846106151}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
@@ -11479,7 +11600,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Time: 1
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -11545,7 +11666,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.2
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -18404,7 +18525,7 @@ GameObject:
   - component: {fileID: 1348081966}
   - component: {fileID: 1348081965}
   m_Layer: 0
-  m_Name: vem_cover_v1
+  m_Name: Vem
   m_TagString: MusicPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19239,8 +19360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1, y: -366}
-  m_SizeDelta: {x: 715, y: 410}
+  m_AnchoredPosition: {x: 1, y: -362.5}
+  m_SizeDelta: {x: 720, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1391284563
 MonoBehaviour:
@@ -23710,7 +23831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1781208220
 Transform:
   m_ObjectHideFlags: 0
@@ -23720,8 +23841,8 @@ Transform:
   m_GameObject: {fileID: 1781208219}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: -3.99, z: -1.07}
-  m_LocalScale: {x: 4, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: -3.29, z: -2.11}
+  m_LocalScale: {x: 3.2, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2027257796}
@@ -24798,7 +24919,7 @@ GameObject:
   - component: {fileID: 1874207118}
   - component: {fileID: 1874207117}
   m_Layer: 0
-  m_Name: borealis_cover_v3
+  m_Name: Topala
   m_TagString: MusicPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25060,7 +25181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -229}
+  m_AnchoredPosition: {x: 0, y: -200}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876945346
@@ -25111,8 +25232,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -25175,7 +25296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 10
   fadeDistance: 0.25
-  endYPosition: 500
+  endYPosition: 10000
 --- !u!1 &1880257218
 GameObject:
   m_ObjectHideFlags: 0
@@ -25190,7 +25311,7 @@ GameObject:
   - component: {fileID: 1880257223}
   - component: {fileID: 1880257222}
   m_Layer: 0
-  m_Name: BluesStepAlbumCover
+  m_Name: BluesStep
   m_TagString: MusicPiece
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26108,6 +26229,7 @@ RectTransform:
   - {fileID: 1889044080}
   - {fileID: 995578426}
   - {fileID: 1602799744}
+  - {fileID: 327621339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26881,6 +27003,7 @@ MonoBehaviour:
   titleText: {fileID: 0}
   songDisplay: {fileID: 0}
   introTextDisplay: {fileID: 0}
+  songBlurbs: {fileID: 0}
 --- !u!4 &2026165963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2414090274533151543, guid: ac322475f18be824da3f3bd2e91d5c85, type: 3}
